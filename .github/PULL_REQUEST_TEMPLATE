@@ -1,0 +1,22 @@
+<!-- Use a meaningful title that references a story ID -->
+<!-- e.g. [AB-123] Adds some cool new feature -->
+
+**What kind of change does this PR introduce?**
+<!-- e.g. new features, bug fixes, documentation updates, test fixes, etc -->
+
+
+**What feature does this relate to?**
+<!-- e.g. Plan Management -->
+
+
+**What changes have been made?**
+<!-- e.g. Added some front end components and an API endpoint -->
+
+
+**Anything else that reviewers need to be aware of?**
+<!-- Explain anything that would be useful to know if someone needs to debug this feature at a later date -->
+<!-- Put _None_ if there is no useful extra information -->
+
+**What's the regression footprint?**
+<!-- Useful for testers to understand the impact of this change on other parts of Sharktower -->
+<!-- e.g. Kanban, Login, Plan Management, Shojis, Full Sharktower -->
