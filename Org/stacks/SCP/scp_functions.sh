@@ -61,11 +61,8 @@ deploy_allowedregions(){
 
   #echo $regions
 
-  echo "Enter region 1:"
-  read region1
-
-  echo "Enter region 2:"
-  read region2
+  region1=eu-west-1
+  region2=eu-west-2
 
   scpname="AllowedRegions"
   targetids=$(get_root_id)
