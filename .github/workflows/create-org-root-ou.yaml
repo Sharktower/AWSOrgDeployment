@@ -1,0 +1,37 @@
+# Create Root OU is not a process needing to be ran on every push. For that reasons it's defined as a manual workflow dispatch. 
+# 
+name: "CreateRootOU"
+
+on:
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+
+jobs:
+    CreateRootOU:
+        runs-on: ubuntu-latest
+        environment:
+            name: proteus_org
+        steps:
+        - name: Checkout
+          uses: actions/checkout@v2
+        - name: Add profile credentials to ~/.aws/credentials 
+          run: |
+            aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }} --profile OrgRoot
+            aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }} --profile OrgRoot
+        - name: Check credentials and profile
+          run: |
+            aws sts get-caller-identity --profile OrgRoot
+            chmod +x "${GITHUB_WORKSPACE}/Org/stacks/Organization/test_create_role_profile.sh"
+            bash ${GITHUB_WORKSPACE}/Org/stacks/Organization/test_create_role_profile.sh
+        - name: Deploy AWS Organization and Root OU's
+          run: | 
+            chmod +x "${GITHUB_WORKSPACE}/Org/stacks/deploy.sh"
+            bash ${GITHUB_WORKSPACE}/Org/stacks/deploy.sh
+            
+    
+          
+
