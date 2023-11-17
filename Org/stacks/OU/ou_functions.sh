@@ -22,7 +22,7 @@ deploy_ou(){
   parameters=$(add_parameter "ParentIdParam" $parentid $parameters)
 
   resourcetype='OU'
-  template='cfn/OU.yaml'
+  template='Org/stacks/OU/cfn/OU.yaml'
   deploy_stack $profile $nameparam $resourcetype $template $parameters
 
 }

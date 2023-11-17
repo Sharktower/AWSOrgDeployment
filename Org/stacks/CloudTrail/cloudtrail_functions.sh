@@ -12,7 +12,7 @@ deploy_organization_cloudtrail(){
 	
   trailname=$orgprefix'-org-trail'
   resourcetype="CloudTrail"
-  template="cfn/Trail.yaml"
+  template="Org/stacks/CloudTrail/cfn/Trail.yaml"
 
 	parameters=$(add_parameter "NameParam" $trailname)
  

@@ -86,7 +86,7 @@ deploy_scp_with_parameters(){
   parameters=$2
 
   resourcetype='SCP'
-  template='cfn/'$scpname'.yaml'
+  template='Org/stacks/SCP/cfn/'$scpname'.yaml'
   deploy_stack $profile $scpname $resourcetype $template $parameters
 
 }

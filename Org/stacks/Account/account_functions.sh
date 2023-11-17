@@ -30,7 +30,7 @@ deploy_account() {
 	function=${FUNCNAME[0]}
   validate_param "accountname" "$accountname" "$function"
 	
-  template="cfn/Account.yaml"
+  template="Org/stacks/Account/cfn/Account.yaml"
   resourcetype='Account'
   parameters=$(add_parameter "NameParam" $accountname)
 	

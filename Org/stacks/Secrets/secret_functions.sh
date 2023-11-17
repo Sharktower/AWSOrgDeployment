@@ -21,7 +21,7 @@ create_secret(){
 
   #create secret
   resourcetype='Secret'
-  template='cfn/Secret.yaml'
+  template='Org/stacks/Secrets/cfn/Secret.yaml'
   parameters=$(add_parameter "NameParam" $secretname)
   parameters=$(add_parameter "KMSKeyID" $kmskeyid $parameters)
   parameters=$(add_parameter "SecretValue" $not_secret_default_value $parameters)
