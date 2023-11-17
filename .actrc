@@ -1,0 +1,6 @@
+# sample .actrc file
+-P ubuntu-latest=catthehacker/ubuntu:full-20.04
+--container-architecture linux/amd64
+-e actonly.json
+--env-file local.env
+--secret-file local.secrets
