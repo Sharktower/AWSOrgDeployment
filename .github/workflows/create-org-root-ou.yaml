@@ -22,19 +22,18 @@ jobs:
           env:
             AWS_DEFAULT_REGION: eu-west-2
           run: |
-            aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }} --profile OrgRoot
-            aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }} --profile OrgRoot
+            aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }} --profile OrgRoot --region eu-west-2
+            aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }} --profile OrgRoot --region eu-west-2
         - name: Check credentials and profile
           env:
             AWS_DEFAULT_REGION: eu-west-2
           run: |
-            aws sts get-caller-identity --profile OrgRoot
+            aws sts get-caller-identity --profile OrgRoot --region eu-west-2
             chmod +x "${GITHUB_WORKSPACE}/Org/stacks/Organization/test_create_role_profile.sh"
             bash ${GITHUB_WORKSPACE}/Org/stacks/Organization/test_create_role_profile.sh
         - name: Deploy AWS Organization and Root OU's
           env:
             AWS_DEFAULT_REGION: eu-west-2
-            
           run: | 
             chmod +x "${GITHUB_WORKSPACE}/Org/stacks/deploy.sh"
             bash ${GITHUB_WORKSPACE}/Org/stacks/deploy.s
