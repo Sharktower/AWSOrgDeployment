@@ -5,20 +5,14 @@
 # description: Deploy AWS IAM IdP
 ##############################################################
 
-cd Org/stacks/Organization
-./deploy.sh
-cd Org/stacks/KMS
-./deploy.sh
-cd Org/stacks/Secrets
-./deploy.sh
+
+./Org/stacks/Organization/deploy.sh
+./Org/stacks/KMS/deploy.sh
+./Org/stacks/Secrets/deploy.sh
 
 
-cd Org/stacks/OU
-./deploy_root_ous.sh
-cd Org/stacks/SCP
-./deploy_root_scps.sh
-cd ..
-
+./Org/stacks/OU/deploy_root_ous.sh
+./Org/stacks/SCP/deploy_root_scps.sh
 
 ################################################################################
 # Copyright Notice
