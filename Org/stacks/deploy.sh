@@ -8,7 +8,7 @@
 
 ./Org/stacks/Organization/deploy.sh
 ./Org/stacks/KMS/deploy.sh
-./Org/stacks/Secrets/deploy.sh
+./Org/stacks/Secrets/deploy_org_secrets.sh
 
 
 ./Org/stacks/OU/deploy_root_ous.sh
