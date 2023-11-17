@@ -5,7 +5,7 @@
 # Description: OrgRoot user deploys three governance accounts,
 # Backup, and Root Sandbox account
 ##############################################################
-source account_functions.sh
+source Org/stacks/Account/account_functions.sh
 
 echo "You must have an AWS CLI profile named OrgRoot configured to run this script"
 echo "-------------- Deploy Accounts -------------------"

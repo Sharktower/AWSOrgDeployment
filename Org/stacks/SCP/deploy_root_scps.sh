@@ -5,8 +5,8 @@
 # description: SCPs deployed by root user of an AWS Organization
 # The corresponding user is OrgRoot in this repository.
 ##############################################################
-source scp_functions.sh
-source Organization/org_functions.sh
+source Org/stacks/SCP/scp_functions.sh
+source Org/stacks/Organization/org_functions.sh
 
 echo "An CLI Profile named OrgRoot is required to run this code."
 

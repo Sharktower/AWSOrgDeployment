@@ -4,7 +4,7 @@
 # author: @teriradichel @2ndsightlab
 # description: Deploy OrgRoot organizational secrets
 ##############################################################
-source secret_functions.sh
+source Org/stacks/Secrets/secret_functions.sh
 
 echo "An CLI Profile named OrgRoot is required to run this code."
 

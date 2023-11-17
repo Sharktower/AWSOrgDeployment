@@ -5,11 +5,10 @@
 # Description: Deploy organization cloudtrail
 ###############################################################
 
-source cloudtrail_functions.sh
+source Org/stacks/CloudTrail/cloudtrail_functions.sh
 
 profile="OrgRoot"
 
-#deploy organizational cloudtrail
 deploy_organization_cloudtrail
 
 #################################################################################

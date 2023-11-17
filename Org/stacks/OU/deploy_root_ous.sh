@@ -4,7 +4,7 @@
 # author: @teriradichel @2ndsightlab
 # description: Deploy Organization OUs managed by OrgRoot
 ##############################################################
-source ou_functions.sh
+source Org/stacks/OU/ou_functions.sh
 
 echo "An CLI Profile named OrgRoot is required to run this code."
 

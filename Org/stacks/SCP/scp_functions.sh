@@ -7,7 +7,7 @@
 source Functions/shared_functions.sh
 
 profile="Governance"
-source Organization/org_functions.sh
+source Org/stacks/Organization/org_functions.sh
 
 deploy_root_scp(){
    scpname=$1
