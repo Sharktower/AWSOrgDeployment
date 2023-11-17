@@ -4,7 +4,7 @@
 # author: @teriradichel @2ndsightlab
 ##############################################################
 
-source keyalias_functions.sh
+source KMS/stacks/KeyAlias/keyalias_functions.sh
 
 echo "----Create an AWS CLI Profile named 'KMS' before running this script---"
 

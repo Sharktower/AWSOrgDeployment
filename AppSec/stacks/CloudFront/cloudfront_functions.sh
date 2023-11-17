@@ -14,7 +14,7 @@ validate_certificate(){
   validate_param "hostedzoneid" "$hostedzoneid" "$func"
   validate_param "domainname" "$domainname" "$func"
 
-  template='cfn/Certificate.yaml'
+  template='AppSec/stacks/CertificateManager/cfn/Certificate.yaml'
   parameters=$(add_parameter "hostedzoneid" $hostedzoneid)
   parameters=$(add_parameter "domainname" $domainname $parameters)
   deploy_stack $profile $secretname $resourcetype $template $parameters
@@ -28,7 +28,7 @@ deploy_certificate(){
   func=${FUNCNAME[0]}
   validate_param "domainname" "$domainname" "$func"
 
-  template='cfn/Certificate.yaml'
+  template='AppSec/stacks/CertificateManager/cfn/Certificate.yaml'
   parameters=$(add_parameter "domainname" $domainname $parameters)
   deploy_stack $profile $secretname $resourcetype $template $parameters
 }

@@ -9,7 +9,7 @@
 echo "-------------- Deploy Roles -------------------"
 echo "You must have a CLI profile named "IAM" configured to run this script"
 
-source role_functions.sh
+source IAM/stacks/Role/role_functions.sh
 
 deploy_group_role 'AppDeployment'
 deploy_group_role 'KMSAdmins'

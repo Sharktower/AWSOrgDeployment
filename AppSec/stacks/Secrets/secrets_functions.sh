@@ -20,7 +20,7 @@ create_secret(){
 
   #create secret
   resourcetype='Secret'
-  template='cfn/UserSecret.yaml'
+  template='AppSec/stacks/SSMParameters/cfn/UserSecret.yaml'
   parameters=$(add_parameter "NameParam" $secretname)
   parameters=$(add_parameter "KMSKeyID" $kmskeyid $parameters)
   deploy_stack $profile $secretname $resourcetype $template $parameters
@@ -31,7 +31,7 @@ create_secret(){
   secretid=$(get_stack_export $stackname $output)
 
   resourcetype='SecretResourcePolicy'
-  template='cfn/UserSecretResourcePolicy.yaml'
+  template='AppSec/stacks/SSMParameters/cfn/UserSecretResourcePolicy.yaml'
   parameters=$(add_parameter "NameParam" $secretname)
   parameters=$(add_parameter "Secret" $secretid $parameters)
   resource=$keyname'SecretResourcePolicy'

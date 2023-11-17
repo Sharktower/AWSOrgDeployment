@@ -26,7 +26,7 @@ vpc=$vpcprefix$vpctype'VPC'
 cidr=$vpcprefix$vpctype'VPCCIDR'
 count=1
 firstzone=0
-nacltemplate='cfn/NACLRules/Developer.yaml'
+nacltemplate='Network/stacks/cfn/NACLRules/Developer.yaml'
 
 deploy_subnets $vpc $cidr $count $firstzone $cidrbits $nacltemplate
 
@@ -41,7 +41,7 @@ deploy_github_prefix_list
 
 prefix="Github"
 desc="Github-SG-Uses-Customer-Prefix-list"
-template="cfn/SGRules/Github.yaml"
+template="Network/stacks/cfn/SGRules/Github.yaml"
 deploy_security_group $vpc $prefix $desc $template
 
 echo "Deployed GitHub Security Group"
@@ -61,10 +61,10 @@ template="none"
 deploy_security_group $vpc $prefix $desc $template
 vpceaccess_sgname=$vpc'-'$prefix
 
-template='cfn/SGRules/VPCEndpointInterface.yaml'
+template='Network/stacks/cfn/SGRules/VPCEndpointInterface.yaml'
 deploy_sg_rules $vpce_sgname $template
 
-template='cfn/SGRules/VPCEndpointAccess.yaml'
+template='Network/stacks/cfn/SGRules/VPCEndpointAccess.yaml'
 deploy_sg_rules $vpceaccess_sgname $template
 
 deploy_vpce "cloudformation"
@@ -89,7 +89,7 @@ vpc=$vpcprefix$vpctype'VPC'
 cidr=$vpcprefix$vpctype'VPCCIDR'
 count=2
 firstzone=0
-nacltemplate='cfn/NACLRules/HTTPOutbound.yaml'
+nacltemplate='Network/stacks/cfn/NACLRules/HTTPOutbound.yaml'
 deploy_subnets $vpc $cidr $count $firstzone $cidrbits $nacltemplate
 
 vpcprefix="BatchJobs"
@@ -99,12 +99,12 @@ deploy_vpc $vpcprefix $cidr $vpctype
 
 prefix="TriggerBatchJobLambda"
 desc=$prefix
-template="cfn/SGRules/NoAccess.yaml"
+template="Network/stacks/cfn/SGRules/NoAccess.yaml"
 deploy_security_group $vpc $prefix $desc $template
 
 prefix="GenBatchJobIdLambda"
 desc=$prefix
-template="cfn/SGRules/NoAccess.yaml"
+template="Network/stacks/cfn/SGRules/NoAccess.yaml"
 deploy_security_group $vpc $prefix $desc $template
 
 

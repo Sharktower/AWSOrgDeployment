@@ -4,7 +4,7 @@
 # author: @teriradichel @2ndsightlab
 # description: Functions for user creation
 ##############################################################
-source user_functions.sh
+source IAM/stacks/User/user_functions.sh
 
 create_ssh_key "Developer"
 create_ssh_key "Developer2"

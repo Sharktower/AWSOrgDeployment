@@ -18,7 +18,7 @@ deploy_user() {
   validate_param "username" "$username" "$function"
 	validate_param "console_access" "$console_access" "$function"
 
-  template="cfn/User.yaml"
+  template="IAM/stacks/User/cfn/User.yaml"
   resourcetype='User'
   parameters=$(add_parameter "NameParam" $username)
   
@@ -100,7 +100,7 @@ create_ssh_key(){
 	
 	#update user iam policy to allow access to secret
   resourcetype='Policy'
-  template='cfn/UserSecretPolicy.yaml'
+  template='IAM/stacks/User/cfn/UserSecretPolicy.yaml'
   parameters=$(add_parameter "NameParam" $keyname)
 	resource=$keyname'UserSecretPolicy'
   deploy_stack $profile $resource $resourcetype $template $parameters

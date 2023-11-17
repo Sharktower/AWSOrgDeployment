@@ -19,7 +19,7 @@ deploy_idp(){
 
   name='OktaIdentiyProvider'
   resourcetype='IdentityProvider'
-  template='cfn/IdP.yaml'
+  template='IAM/stacks/IdP/cfn/IdP.yaml'
   deploy_stack $profile $name $resourcetype $template $parameters
 
 }

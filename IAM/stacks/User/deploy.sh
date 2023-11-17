@@ -4,7 +4,7 @@
 # author: @teriradichel @2ndsightlab
 # Description: Deploy all users
 ##############################################################
-source user_functions.sh
+source IAM/stacks/User/user_functions.sh
 
 echo "You must have an AWS CLI profile named IAM configured to run this script"
 echo "-------------- Deploy User -------------------"

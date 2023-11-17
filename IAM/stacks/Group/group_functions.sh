@@ -20,13 +20,13 @@ deploy_group(){
 	fi
 
 	resourcetype='Group'
-	template='cfn/Group.yaml'
+	template='IAM/stacks/Group/cfn/Group.yaml'
 	parameters=$(add_parameter "NameParam" $groupname)
   
 	deploy_stack $profile $groupname $resourcetype $template "$parameters"
 
 	policyname=$groupname'GroupPolicy'	
-  template='cfn/GroupPolicy.yaml'
+  template='IAM/stacks/Group/cfn/GroupPolicy.yaml'
 	deploy_group_policy $groupname $template $policyname
 
 }
@@ -59,7 +59,7 @@ add_users_to_group() {
 	
 	timestamp=$(get_timestamp)
 
-	template='cfn/UserToGroupAddition.yaml'
+	template='IAM/stacks/Group/cfn/UserToGroupAddition.yaml'
 	name='AddUsersTo'$groupname
 	resourcetype='UserToGroupAddition'
 	parameters=$(add_parameter "UserNamesParam" $usernames)

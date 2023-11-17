@@ -23,7 +23,7 @@ deploy_key_alias(){
 
 	parameters=$(add_parameter "KeyIdParam" "$keyid")
   parameters=$(add_parameter "KeyAliasParam" $alias $parameters)
-  template='cfn/KeyAlias.yaml'
+  template='KMS/stacks/KeyAlias/cfn/KeyAlias.yaml'
   resourcetype='KeyAlias'
   	
 	deploy_stack $profile $alias $resourcetype $template "$parameters"

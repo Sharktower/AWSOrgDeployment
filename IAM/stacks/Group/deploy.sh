@@ -7,7 +7,7 @@
 
 echo "-------------- Deploy Groups -------------------"
 
-source group_functions.sh
+source IAM/stacks/Group/group_functions.sh
 
 deploy_group 'KMSAdmins'
 deploy_group 'NetworkAdmins'
@@ -40,7 +40,7 @@ users='AppSec'
 group='AppSec'
 add_users_to_group $users $group
 
-template="cfn/GroupRunEC2FromConsolePolicy.yaml"
+template="IAM/stacks/Group/cfn/GroupRunEC2FromConsolePolicy.yaml"
 groupname="Developers"
 policyname="GroupRunEC2FromConsolePolicy"
 deploy_group_policy $groupname $template $policyname

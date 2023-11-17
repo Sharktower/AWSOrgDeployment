@@ -6,7 +6,7 @@
 # chagne CLI configuration to use this IAM user for deployments.
 ##############################################################
 
-source user_functions.sh
+source IAM/stacks/User/user_functions.sh
 
 echo "-------------- Deploy First IAM Admin and Role -------------------"
 deploy_iam_admin 'IAMAdmin'

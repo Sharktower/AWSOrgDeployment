@@ -4,7 +4,7 @@
 # description: deploy KMS keys
 ##############################################################
 source Functions/shared_functions.sh
-source key_functions.sh
+source KMS/stacks/Key/key_functions.sh
 
 echo "------Create a CLI profile named 'KMS' before running these scripts ---"
 

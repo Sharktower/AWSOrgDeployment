@@ -24,7 +24,7 @@ deploy_okta_role(){
 	timestamp=$(get_timestamp)
 
 	resourcetype='Role'
-	template='cfn/OktaRole.yaml'
+	template='IAM/stacks/OktaRole/cfn/OktaRole.yaml'
 	p=$(add_parameter "RoleNameParam" $rolename)
 	p=$(add_parameter "TimestampParam" $timestamp "$p")
 	stackname=$rolename'Role'
@@ -44,7 +44,7 @@ deploy_role_policy(){
  	validate_param "policyname" "$policyname" $function
 
   p=$(add_parameter "NameParam" $policyname)
-	template='cfn/Policy/'$policyname'.yaml'
+	template='IAM/stacks/OktaRole/cfn/Policy/'$policyname'.yaml'
 	resourcetype='Policy'
 
 	deploy_stack $profile $policyname $resourcetype $template "$p"

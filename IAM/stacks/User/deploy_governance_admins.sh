@@ -6,7 +6,7 @@
 # change CLI configuration to use the ROOT AWS CLI profile for deployments.
 ##############################################################
 
-source user_functions.sh
+source IAM/stacks/User/user_functions.sh
 
 profile='ROOT'
 

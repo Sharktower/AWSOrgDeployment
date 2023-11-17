@@ -33,7 +33,7 @@ deploy_key(){
         validate_param "service" "$service" "$function"
         validate_param "desc" "$desc" "$function"
 
-	      template='cfn/Key.yaml'
+	      template='KMS/stacks/Key/cfn/Key.yaml'
         resourcetype='Key'
 	      timestamp="$(date)"
         timestamp=$(echo $timestamp | sed 's/ //g')

@@ -30,7 +30,7 @@ deploy_group_role(){
 	timestamp=$(get_timestamp)
 
 	resourcetype='Role'
-	template='cfn/GroupRole.yaml'
+	template='IAM/stacks/Role/cfn/GroupRole.yaml'
 	p=$(add_parameter "GroupNameParam" $groupname)
 	p=$(add_parameter "GroupUsers" $users "$p") 
   p=$(add_parameter "TimestampParam" $timestamp "$p")
@@ -68,7 +68,7 @@ deploy_crossaccount_group_role(){
 
 	profile="$targetacctprofile"
   resourcetype='Role'
-  template='cfn/GroupRole.yaml'
+  template='IAM/stacks/Role/cfn/GroupRole.yaml'
   p=$(add_parameter "GroupNameParam" $groupname)
   p=$(add_parameter "GroupUsers" $users "$p")
   p=$(add_parameter "TimestampParam" $timestamp "$p")
@@ -90,7 +90,7 @@ deploy_role_policy(){
  	validate_param "policyname" "$policyname" "$function"
 
   p=$(add_parameter "NameParam" $policyname)
-	template='cfn/Policy/'$policyname'.yaml'
+	template='IAM/stacks/Role/cfn/Policy/'$policyname'.yaml'
 	resourcetype='Policy'
 
 	deploy_stack $profile $policyname $resourcetype $template "$p"
@@ -108,7 +108,7 @@ deploy_ec2_instance_profile(){
 
   p=$(add_parameter "NameParam" "$profilename")
   p=$(add_parameter "RoleNamesParam" "$rolename" "$p")
-  template='cfn/EC2InstanceProfile.yaml'
+  template='IAM/stacks/Role/cfn/EC2InstanceProfile.yaml'
   resourcetype='EC2InstanceProfile'
 
   deploy_stack $profile $profilename $resourcetype $template "$p"
@@ -125,7 +125,7 @@ deploy_batch_role(){
   validate_param "jobtype" "$jobtype" "$function"
 
   resourcetype='Role'
-  template='cfn/BatchJobRole.yaml'
+  template='IAM/stacks/Role/cfn/BatchJobRole.yaml'
 	p=$(add_parameter "JobNameParam" $jobname)
   p=$(add_parameter "BatchJobTypeParam" $jobtype $p)  
 	rolename=$jobname$jobtype'BatchRole'
@@ -158,7 +158,7 @@ deploy_aws_service_role(){
   validate_param "awsservice" "$awsservice" "$function"
  
   resourcetype='Role'
-  template='cfn/AWSServiceRole.yaml'
+  template='IAM/stacks/Role/cfn/AWSServiceRole.yaml'
   p=$(add_parameter "NameParam" $rolename)
   p=$(add_parameter "AWSServiceParam" $awsservice $p)
   

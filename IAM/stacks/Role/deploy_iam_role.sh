@@ -4,7 +4,7 @@
 # author: @teriradichel @2ndsightlab
 # Description: Deploy all roles
 ##############################################################
-source role_functions.sh
+source IAM/stacks/Role/role_functions.sh
 
 echo "-------------- Deploy IAM Admin Role -------------------"
 

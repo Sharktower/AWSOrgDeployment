@@ -4,7 +4,7 @@
 # author: @teriradichel @2ndsightlab
 # description: Deploy AWS IAM IdP
 ##############################################################
-source idp_functions.sh
+source IAM/stacks/IdP/idp_functions.sh
 
 echo "An CLI Profile named OrgRoot is required to run this code."
 

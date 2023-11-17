@@ -10,7 +10,7 @@ source Functions/shared_functions.sh
 profile="AppSec"
 resource="TriggerBatchJobLambda"
 resourcetype="Policy"
-template='cfn/'$resource'.yaml'
+template='Lambda/stacks/BatchJobAuth/TriggerBatchJob/cfn/'$resource'.yaml'
 
 #going to switch this up - deploy later
 #deploy_stack $profile $resource $resourcetype $template

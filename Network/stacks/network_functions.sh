@@ -15,7 +15,7 @@ deploy_vpce() {
   function=${FUNCNAME[0]}
   validate_param "service" "$service" "$function"
 
-  template="cfn/VPCEndpoint.yaml"
+  template="Network/stacks/cfn/VPCEndpoint.yaml"
   resourcetype="VPCEndpoint"
 
   p=$(add_parameter "ServiceParam" $service)
@@ -34,7 +34,7 @@ deploy_eip(){
   validate_param "instance_cfexplort" "$instance_cfexport" "$function"
 
   resourcetype='EIP'
-  template='cfn/EIP.yaml'
+  template='Network/stacks/cfn/EIP.yaml'
   p=$(add_parameter "NameParam" $eipname)
   p=$(add_parameter "InstanceIdExportParam" $instance_cfexport $p)
 
@@ -52,7 +52,7 @@ deploy_eip_association(){
   validate_param "instance_cfexport" "$instance_cfexport" "$function"
 
   resourcetype='EIPAssociation'
-  template='cfn/EIPAssociation.yaml'
+  template='Network/stacks/cfn/EIPAssociation.yaml'
   p=$(add_parameter "EIPIDExportParam" $eip_export)
   p=$(add_parameter "InstanceIdExportParam" $instance_cfexport $p)
 
@@ -81,7 +81,7 @@ deploy_github_prefix_list() {
 
   listname="GithubPrefixList"
 	entries=""
-	template="cfn/PrefixList-Github.yaml"
+	template="Network/stacks/cfn/PrefixList-Github.yaml"
 	
 	if [ -f "$template" ]; then rm $template; fi
 
@@ -95,7 +95,7 @@ deploy_github_prefix_list() {
 		entries=$entries$'          Description: github-git\\\n'
 	done
 
-	cat cfn/PrefixList.tmp | \
+	cat Network/stacks/cfn/PrefixList.tmp | \
   sed 's*\[\[name\]\]*'$listname'*g'  | \
 	sed 's*\[\[ips\]\]*'"$entries"'*' >> $template
 
@@ -118,7 +118,7 @@ deploy_vpc (){
   vpcname=$prefix$vpctype'VPC'
 
 	resourcetype='VPC'
-  template='cfn/VPC.yaml'
+  template='Network/stacks/cfn/VPC.yaml'
   p=$(add_parameter "NameParam" $vpcname)
  	p=$(add_parameter "CIDRParam" $cidr $p)
 	
@@ -126,7 +126,7 @@ deploy_vpc (){
 
 	#deploy route table
   resourcetype='RouteTable'
-  template='cfn/RouteTable.yaml'
+  template='Network/stacks/cfn/RouteTable.yaml'
 	rtname=$vpcname'RouteTable'
   p=$(add_parameter "NameParam" $rtname)
   p=$(add_parameter "VPCExportParam" $vpcname $p)
@@ -203,7 +203,7 @@ clean_up_default_sg(){
     --tags 'Key="Name",Value="'$sgname'"'
 
   name=$sgname'-Rules'
-  template='cfn/SGRules/NoAccess.yaml'
+  template='Network/stacks/cfn/SGRules/NoAccess.yaml'
 	exportparam=$vpcname'DefaultSecurityGroup'
   p=$(add_parameter "SGExportParam" $exportparam)
   resourcetype='SGRules'
@@ -238,12 +238,12 @@ deploy_remote_access_sgs_for_group() {
 
 		prefix="SSH-$user"
 		desc="SSHRemoteAccess-CantPassSpacesToCLIFixLater"
-		template="cfn/SGRules/SSH.yaml"
+		template="Network/stacks/cfn/SGRules/SSH.yaml"
 		deploy_security_group $vpc $prefix $desc $template $allowcidr
 
 		prefix="RDP-$user"
 		desc="RDPRemoteAccess-CantPassSpacesToCLIFixLater"
-		template="cfn/SGRules/RDP.yaml"
+		template="Network/stacks/cfn/SGRules/RDP.yaml"
 		deploy_security_group $vpc $prefix $desc $template $allowcidr
 
   done
@@ -264,7 +264,7 @@ deploy_security_group() {
   validate_param "desc" "$desc" "$function"
   validate_param "rulestemplate" "$rulestemplate" "$function"
 
-	template="cfn/SecurityGroup.yaml"
+	template="Network/stacks/cfn/SecurityGroup.yaml"
 	resourcetype="SecurityGroup"	
 	sgname=$vpc'-'$prefix
 	p=$(add_parameter "NameParam" $sgname)
@@ -326,7 +326,7 @@ deploy_subnets(){
   validate_param "naclrulestemplate" "$naclrulestemplate" "$function"
 
   #assuming all the subnets use the same NACL here
-	template="cfn/NACL.yaml"
+	template="Network/stacks/cfn/NACL.yaml"
 	naclname=$vpc'-NACL'
 	resourcetype='NACL'
 	p=$(add_parameter "NameParam" $naclname)
@@ -350,7 +350,7 @@ deploy_subnets(){
    subnetname=$vpc'-Subnet'$i
 	
    resourcetype='Subnet'
-   template='cfn/Subnet.yaml'  
+   template='Network/stacks/cfn/Subnet.yaml'  
 	 p=$(add_parameter "NameParam" $subnetname)
    p=$(add_parameter "VPCExportParam" $vpc $p)
    p=$(add_parameter "ZoneIndexParam" $index $p)
@@ -361,7 +361,7 @@ deploy_subnets(){
  
 	 deploy_stack $profile $subnetname $resourcetype $template "$p"
 
-	template=cfn/SubnetAssociation.yaml
+	template=Network/stacks/cfn/SubnetAssociation.yaml
 	resourcetype='SubnetAssociation'
 
   timestamp="$(date)"
@@ -388,7 +388,7 @@ deploy_s3_security_group() {
 
   prefixlistid=$(get_s3_prefix_list)
 
-  template="cfn/SecurityGroup.yaml"
+  template="Network/stacks/cfn/SecurityGroup.yaml"
   resourcetype="SecurityGroup"  
   sgname=$vpc'-'$prefix
   p=$(add_parameter "NameParam" $sgname)
@@ -398,7 +398,7 @@ deploy_s3_security_group() {
   deploy_stack $profile $sgname $resourcetype $template "$p"
 
   name=$prefix'-Rules'
-  template='cfn/SGRules/S3.yaml'
+  template='Network/stacks/cfn/SGRules/S3.yaml'
   p=$(add_parameter "NameParam" $name)
   p=$(add_parameter "SGExportParam" $sgname $p)
   p=$(add_parameter "S3PrefixIdParam" "$prefixlistid" $p)

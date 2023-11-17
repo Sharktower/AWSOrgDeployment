@@ -10,14 +10,14 @@ source Functions/shared_functions.sh
 profile="AppSec"
 resource="LambdaGenerateBatchJobId"
 resourcetype="Policy"
-template='cfn/'$resource'.yaml'
+template='Lambda/stacks/BatchJobAuth/GenerateBatchJobId/cfn/'$resource'.yaml'
 
 deploy_stack $profile $resource $resourcetype $template
 
 profile="AppDeploy"
 resource="GenerateBatchJobId"
 resourcetype="Lambda"
-template='cfn/'$resource'.yaml'
+template='Lambda/stacks/BatchJobAuth/GenerateBatchJobId/cfn/'$resource'.yaml'
 
 deploy_stack $profile $resource $resourcetype $template
 

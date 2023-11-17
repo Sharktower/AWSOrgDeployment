@@ -5,8 +5,8 @@
 # description: deploy batch job
 ##############################################################
 
-source Functions/batch_appsec_functions.sh
-source Functions/batch_appdeploy_functions.sh
+source Jobs/stacks/Functions/batch_appsec_functions.sh
+source Jobs/stacks/Functions/batch_appdeploy_functions.sh
 
 jobname='DeployJobCredentials'
 

@@ -8,7 +8,7 @@
 
 echo "-------------- Deploy KMS Roles -------------------"
 
-source role_functions.sh
+source IAM/stacks/Role/role_functions.sh
 
 deploy_role_policy 'AppSecGroupRoleKMSPolicy'
 deploy_role_policy 'IAMAdminsGroupRoleKMSPolicy'

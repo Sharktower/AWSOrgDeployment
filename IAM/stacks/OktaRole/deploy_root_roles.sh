@@ -8,7 +8,7 @@
 echo "-------------- Deploy Roles -------------------"
 echo "You must have a CLI profile named "OrgRoot" configured to run this script"
 
-source role_functions.sh
+source IAM/stacks/OktaRole/role_functions.sh
 
 deploy_root_okta_role 'BillingAdmins'
 
