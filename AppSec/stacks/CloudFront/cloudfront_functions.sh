@@ -4,7 +4,7 @@
 # author: @teriradichel @2ndsightlab
 # description: Functions to deploy tls certificates
 ##############################################################
-source ../../Functions/shared_functions.sh
+source Functions/shared_functions.sh
 
 validate_certificate(){
   hostedzoneid="$1"

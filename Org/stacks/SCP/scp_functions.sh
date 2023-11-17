@@ -4,10 +4,10 @@
 # author: @teriradichel @2ndsightlab
 # description: Functions for SCP deployment
 ##############################################################
-source ../../../Functions/shared_functions.sh
+source Functions/shared_functions.sh
 
 profile="Governance"
-source ../Organization/org_functions.sh
+source Organization/org_functions.sh
 
 deploy_root_scp(){
    scpname=$1

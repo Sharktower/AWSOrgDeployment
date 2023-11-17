@@ -4,7 +4,7 @@
 # author: @teriradichel @2ndsightlab
 # description: Functions for idp creation
 ##############################################################
-source ../../../Functions/shared_functions.sh
+source Functions/shared_functions.sh
 
 profile="IAM"
 

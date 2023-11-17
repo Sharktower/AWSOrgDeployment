@@ -14,17 +14,17 @@ fi
 cd ..
 cd stacks/User
 ./deploy.sh
-cd ../../test
+cd test
 
 cd ..
 cd  stacks/Group
 ./deploy.sh
-cd ../../test
+cd test
 
 cd ..
 cd stacks/Role
 ./deploy.sh
-cd ../../test
+cd test
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo " Set up MFA for al users before proceeding:"

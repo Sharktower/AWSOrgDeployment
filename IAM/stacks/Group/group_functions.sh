@@ -4,7 +4,7 @@
 # author: @teriradichel @2ndsightlab
 # Description: Functions to deploy a group and add users to groups
 ##############################################################
-source "../../../Functions/shared_functions.sh"
+source "Functions/shared_functions.sh"
 profile='IAM'
 
 deploy_group(){

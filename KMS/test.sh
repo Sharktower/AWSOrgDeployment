@@ -7,11 +7,11 @@ echo "Running KMS tests with AWS CLI Profile named kms."
 
 cd stacks/Key
 ./deploy.sh
-cd ../../
+cd 
 
 cd stacks/KeyAlias
 ./deploy.sh
-cd ../../
+cd 
 
 echo "KMS Test Copmlete"
 

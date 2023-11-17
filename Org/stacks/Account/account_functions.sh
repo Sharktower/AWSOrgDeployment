@@ -4,8 +4,8 @@
 # author: @teriradichel @2ndsightlab
 # description: Functions for account creation
 ##############################################################
-source ../../../Functions/shared_functions.sh
-source ../Organization/org_functions.sh
+source Functions/shared_functions.sh
+source Organization/org_functions.sh
 
 profile="OrgRoot"
 

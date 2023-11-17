@@ -4,7 +4,7 @@
 # author: @teriradichel @2ndsightlab
 # description: Functions for SSM Parameter creation
 ##############################################################
-source ../../../Functions/shared_functions.sh
+source Functions/shared_functions.sh
 
 ssm_parameter_exists(){
 	ssm_name="$1"

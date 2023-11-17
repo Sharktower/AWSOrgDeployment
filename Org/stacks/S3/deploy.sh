@@ -4,14 +4,14 @@
 # description: deploy buckets owned by OrgRoot
 # Executed in the organization's management account
 ###############################################################
-source ../../../S3/stacks/s3_functions.sh
+source S3/stacks/s3_functions.sh
 source org_s3_functions.sh
 
 echo "------Create a CLI profile for the OrgRoot user before running this script ---"
 echo "----- see blog post about the org root user in the blog series"
 
 ##deploy buckets
-cd ../../../S3/stacks/
+cd S3/stacks/
 
 profile="OrgRoot"
 suffix="s3accesslogs"
@@ -23,7 +23,7 @@ suffix=cloudtrail
 
 deploy_s3_bucket $profile $suffix $keyalias
 
-cd ../../Org/stacks/S3
+cd Org/stacks/S3
 
 deploy_cloudtrail_bucket_policy
 

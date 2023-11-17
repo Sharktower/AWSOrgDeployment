@@ -5,7 +5,7 @@
 # description: Deploy AWS IAM IdP
 ##############################################################
 
-cd ../../../IAM/stacks/IdP
+cd IAM/stacks/IdP
 
 source idp_functions.sh
 
@@ -13,7 +13,7 @@ echo "An CLI Profile named IAM is required to run this code."
 
 deploy_orgroot_idp
 
-cd ../../../Org/stacks/IdP
+cd Org/stacks/IdP
 
 ################################################################################
 # Copyright Notice

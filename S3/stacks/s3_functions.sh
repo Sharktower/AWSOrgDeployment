@@ -3,7 +3,7 @@
 # S3/stacks/S3_functions.sh
 # author: @teriradichel @2ndsightlab
 ##############################################################
-source ../../../Functions/shared_functions.sh
+source Functions/shared_functions.sh
 
 deploy_s3_bucket() {
  

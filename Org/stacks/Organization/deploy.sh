@@ -5,7 +5,7 @@
 # description: Deploy AWS Organization and settings
 ##############################################################
 
-source organization_functions.sh
+source Org/stacks/Organization/organization_functions.sh
 
 profile="OrgRoot"
 

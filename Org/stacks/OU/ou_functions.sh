@@ -4,8 +4,8 @@
 # author: @teriradichel @2ndsightlab
 # description: Functions for OU creation
 ##############################################################
-source ../../../Functions/shared_functions.sh
-source ../Organization/organization_functions.sh
+source Functions/shared_functions.sh
+source Organization/organization_functions.sh
 
 profile="Org"
 

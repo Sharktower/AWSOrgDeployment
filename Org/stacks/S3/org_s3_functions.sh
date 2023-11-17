@@ -3,7 +3,7 @@
 # Org/stacks/S3/org_s3_functions.sh
 # author: @teriradichel @2ndsightlab
 ###############################################################
-source ../../../Functions/shared_functions.sh
+source Functions/shared_functions.sh
 
 profile="OrgRoot"
 

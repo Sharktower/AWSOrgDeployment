@@ -3,8 +3,8 @@
 # author: @tradichel @2ndsightlab
 # description: CloudTrail functions
 ##############################################################
-source ../../../Functions/shared_functions.sh
-source ../Organization/organization_functions.sh
+source Functions/shared_functions.sh
+source Organization/organization_functions.sh
 
 deploy_organization_cloudtrail(){
 

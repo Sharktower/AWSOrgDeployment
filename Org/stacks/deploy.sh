@@ -7,15 +7,15 @@
 
 cd Organization
 ./deploy.sh
-cd ../KMS
+cd KMS
 ./deploy.sh
-cd ../Secrets
+cd Secrets
 ./deploy.sh
 
 
-cd ../OU
+cd OU
 ./deploy_root_ous.sh
-cd ../SCP
+cd SCP
 ./deploy_root_scps.sh
 cd ..
 

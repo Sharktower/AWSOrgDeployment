@@ -10,7 +10,7 @@
 cd ..
 cd stacks/Role
 ./deploy_kms_policies.sh
-cd ../../test
+cd test
 
 #################################################################################
 # Copyright Notice

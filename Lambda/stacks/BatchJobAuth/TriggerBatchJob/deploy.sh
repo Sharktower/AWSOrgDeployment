@@ -5,7 +5,7 @@
 # description: deploy Lambda function to Trigger a Batch Job
 ##############################################################
 
-source ../../../../Functions/shared_functions.sh
+source Functions/shared_functions.sh
 
 profile="AppSec"
 resource="TriggerBatchJobLambda"

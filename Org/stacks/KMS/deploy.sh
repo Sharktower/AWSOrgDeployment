@@ -4,7 +4,7 @@
 # description: deploy initial KMS key in the mangaement account
 # Executed in the organization's management account
 ###############################################################
-source ../../../Functions/shared_functions.sh
+source Functions/shared_functions.sh
 
 profile="OrgRoot"
 
@@ -22,35 +22,35 @@ desc="OrgRootSecrets"
 keyalias="OrgRootSecrets"
 conditionservice="secretsmanager"
 
-cd ../../../KMS/stacks/Key/
+cd KMS/stacks/Key/
 source key_functions.sh
 deploy_orgroot_key $encryptarn $decryptarn $keyalias $conditionservice $desc
-cd ../../../Org/stacks/KMS
+cd Org/stacks/KMS
 
 echo "-----------  OrgRoot Secrets Key Alias-------"
-cd ../../../KMS/stacks/KeyAlias/
+cd KMS/stacks/KeyAlias/
 source keyalias_functions.sh
 keyid=$(get_orgroot_key_id $keyalias)
 deploy_orgroot_key_alias $keyid $keyalias
-cd ../../../Org/stacks/KMS
+cd Org/stacks/KMS
 
 echo "-----------  OrgRoot ClouddTrail Key-------"
 desc="OrgRootCloudTrail"
 keyalias="OrgRootCloudTrail"
 conditionservice="cloudtrail"
 
-cd ../../../KMS/stacks/Key/
+cd KMS/stacks/Key/
 source key_functions.sh
 deploy_orgroot_key $encryptarn $decryptarn $keyalias $conditionservice $desc
-cd ../../../Org/stacks/KMS
+cd Org/stacks/KMS
 
 
 echo "-----------  OrgRoot CloudTrail Key Alias-------"
-cd ../../../KMS/stacks/KeyAlias/
+cd KMS/stacks/KeyAlias/
 source keyalias_functions.sh
 keyid=$(get_orgroot_key_id $keyalias)
 deploy_orgroot_key_alias $keyid $keyalias
-cd ../../../Org/stacks/KMS
+cd Org/stacks/KMS
 
 ################################################################################
 # Copyright Notice

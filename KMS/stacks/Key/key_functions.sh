@@ -3,7 +3,7 @@
 # author: @tradichel @2ndsightlab
 ##############################################################
 
-source ../../../Functions/shared_functions.sh
+source Functions/shared_functions.sh
 
 profile="KMS"
 

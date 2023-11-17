@@ -5,7 +5,7 @@
 # description: shared network functions
 ##############################################################
 
-source "../../Functions/shared_functions.sh"
+source "Functions/shared_functions.sh"
 profile="Network"
 
 deploy_vpce() {

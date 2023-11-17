@@ -5,4 +5,4 @@
 # shared AppDeploy functions
 ##############################################################
 
-source ../../../../Functions/shared_functions.sh
+source Functions/shared_functions.sh

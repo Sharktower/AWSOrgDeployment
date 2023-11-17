@@ -6,7 +6,7 @@
 # roles and policies
 ##############################################################
 
-source "../../../Functions/shared_functions.sh"
+source "Functions/shared_functions.sh"
 profile='IAM'
 
 deploy_root_okta_role(){

@@ -19,17 +19,17 @@ read ok
 cd ..
 cd stacks/User
 ./deploy_iam_admins.sh
-cd ../../test
+cd test
 
 cd ..
 cd stacks/Group
 ./deploy_iam_group.sh
-cd ../../test
+cd test
 
 cd ..
 cd stacks/Role
 ./deploy_iam_role.sh
-cd ../../test
+cd test
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo " IAM Users, Group and Role deployed."

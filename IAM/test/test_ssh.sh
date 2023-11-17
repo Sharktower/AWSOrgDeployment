@@ -10,7 +10,7 @@
 cd ..
 cd stacks/User
 ./deploy_ssh_keys.sh
-cd ../../test
+cd test
 
 #################################################################################
 # Copyright Notice

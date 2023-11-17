@@ -7,7 +7,7 @@
 
 orgprefix=""
 
-source ../../../Functions/shared_functions.sh
+source Functions/shared_functions.sh
 
 deploy_organization(){
 
