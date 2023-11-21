@@ -6,7 +6,7 @@
 # The corresponding user is OrgRoot in this repository.
 ##############################################################
 source Org/stacks/SCP/scp_functions.sh
-source Org/stacks/Organization/org_functions.sh
+source Org/stacks/Organization/organization_functions.sh
 
 echo "An CLI Profile named OrgRoot is required to run this code."
 
