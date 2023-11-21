@@ -60,6 +60,9 @@ deploy_allowedregions(){
   #done
 
   #echo $regions
+
+  profile="OrgRoot"
+
   region1="eu-west-2"
   region2="eu-west-1"
 
