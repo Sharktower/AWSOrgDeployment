@@ -27,11 +27,14 @@ jobs:
           run: |
             aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }} --profile OrgRoot --region eu-west-2
             aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }} --profile OrgRoot --region eu-west-2
+            aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }} --profile GovernanceRoot --region eu-west-2
+            aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }} --profile GovernanceRoot --region eu-west-2
         - name: Check credentials and profile
           env:
             AWS_DEFAULT_REGION: eu-west-2
           run: |
             aws sts get-caller-identity --profile OrgRoot --region eu-west-2
+            aws sts get-caller-identity --profile GovernanceRoot --region eu-west-2
             chmod u+x ${GITHUB_WORKSPACE}/**/*.sh
         - name: Deploy AWS Organization and Root OU's # Used to skip this step when running locally with Act
           if: ${{ !github.event.act }} 
