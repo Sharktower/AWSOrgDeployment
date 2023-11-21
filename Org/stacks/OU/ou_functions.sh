@@ -34,7 +34,7 @@ deploy_root_ou(){
 }
 
 deploy_child_ou(){
-   profile="OrgRoot"
+   profile="GovernanceRoot"
    child_ou_id=$(get_ou_id "Governance")
    deploy_ou $1 $child_ou_id
 }
