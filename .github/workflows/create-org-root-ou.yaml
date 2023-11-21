@@ -1,6 +1,6 @@
 # Create Root OU is not a process needing to be ran on every push. For that reasons it's defined as a manual workflow dispatch. 
 # 
-name: "CreateRootOU"
+name: "CreateOrg"
 
 on:
   workflow_dispatch:
@@ -11,7 +11,7 @@ on:
         default: 'warning'
 
 jobs:
-    CreateRootOU:
+    CreateOrg:
         runs-on: ubuntu-latest
         environment:
             name: proteus_org
@@ -42,6 +42,13 @@ jobs:
             AWS_DEFAULT_REGION: eu-west-2
           run: | 
             bash ${GITHUB_WORKSPACE}/Org/stacks/deploy.sh
+        - name: Deploy Accounts to Governance OU's # Used to skip this step when running locally with Act
+          if: ${{ !github.event.act }} 
+          env:
+            AWS_DEFAULT_REGION: eu-west-2
+          run: | 
+            bash ${GITHUB_WORKSPACE}/Org/stacks/Account/deploy_governance_accounts.sh
+            
             
     
           
