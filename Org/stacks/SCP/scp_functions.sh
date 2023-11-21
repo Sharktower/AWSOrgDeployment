@@ -63,8 +63,8 @@ deploy_allowedregions(){
 
   profile="Governance"
 
-  region1="eu-west-1"
-  region2="eu-west-2"
+  region1="eu-west-2"
+  region2="eu-west-1"
 
   scpname="AllowedRegions"
   targetids="r-onqa"
@@ -72,7 +72,8 @@ deploy_allowedregions(){
   func=${FUNCNAME[0]}
   validate_param 'scpname' "$scpname" "$func"
   validate_param 'targetids' "$targetids" "$func"
-  validate_param 'regions' "$regions" "$func"
+  validate_param 'region1' "$region1" "$func"
+  validate_param 'region2' "$region2" "$func"
 
   parameters=$(add_parameter "NameParam" $scpname)
   parameters=$(add_parameter "TargetIdsParam" $targetids $parameters)
