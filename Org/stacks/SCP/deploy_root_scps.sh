@@ -44,11 +44,11 @@ deploy_scp $scpname $targets
 # Suspended OU SCPS (Close Account)
 ###
 
-ouname="Suspended"
-targets=$(get_ou_id $ouname)
+# ouname="Suspended"
+# targets=$(get_ou_id $ouname)
 
-scpname="DenyAllButCloseAccount"
-deploy_scp $scpname $targets
+# scpname="DenyAllButCloseAccount"
+# deploy_scp $scpname $targets
 
 ################################################################################
 # Copyright Notice
