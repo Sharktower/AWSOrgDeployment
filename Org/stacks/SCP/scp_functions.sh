@@ -6,7 +6,7 @@
 ##############################################################
 source Functions/shared_functions.sh
 
-profile="Governance"
+profile="GovernanceRoot"
 source Org/stacks/Organization/organization_functions.sh
 
 deploy_root_scp(){
