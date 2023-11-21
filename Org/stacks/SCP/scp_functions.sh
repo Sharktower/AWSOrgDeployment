@@ -67,7 +67,7 @@ deploy_allowedregions(){
   region2="eu-west-2"
 
   scpname="AllowedRegions"
-  targetids=$(get_root_id)
+  targetids="r-onqa"
 
   func=${FUNCNAME[0]}
   validate_param 'scpname' "$scpname" "$func"
