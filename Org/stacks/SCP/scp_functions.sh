@@ -61,13 +61,13 @@ deploy_allowedregions(){
 
   #echo $regions
 
-  profile="OrgRoot"
+  #profile="OrgRoot"
 
   region1="eu-west-2"
   region2="eu-west-1"
 
   scpname="AllowedRegions"
-  targetids="r-onqa"
+  targetids=$(get_root_id)
 
   func=${FUNCNAME[0]}
   validate_param 'scpname' "$scpname" "$func"
