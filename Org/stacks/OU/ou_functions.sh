@@ -33,6 +33,12 @@ deploy_root_ou(){
    deploy_ou $1 $root_ou_id
 }
 
+deploy_child_ou(){
+   profile="OrgRoot"
+   child_ou_id=$(get_ou_id "Governance")
+   deploy_ou $1 $child_ou_id
+}
+
 ################################################################################
 # Copyright Notice
 # All Rights Reserved.

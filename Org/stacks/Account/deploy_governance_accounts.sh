@@ -15,8 +15,8 @@ echo "-------------- Deploy Accounts -------------------"
 deploy_account_w_ou_name 'Billing' 'Governance'
 deploy_account_w_ou_name 'IAM & Governance' 'Governance'
 
-deploy_account_w_ou_name 'Backup' 'Backup'
-deploy_account_w_ou_name 'Sandbox' 'Sandbox'
+#deploy_account_w_ou_name 'Backup' 'Backup'
+#deploy_account_w_ou_name 'Sandbox' 'Sandbox'
 
 #################################################################################
 # Copyright Notice
