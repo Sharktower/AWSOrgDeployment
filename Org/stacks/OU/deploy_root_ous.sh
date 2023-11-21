@@ -12,7 +12,7 @@ deploy_root_ou "DenyAll"
 deploy_root_ou "Governance"
 
 deploy_child_ou "Engineering"
-deploy_child_ou "Critical Resources"
+deploy_child_ou "CriticalResources"
 deploy_child_ou "Production"
 deploy_child_ou "Security"
 deploy_child_ou "Backup"
