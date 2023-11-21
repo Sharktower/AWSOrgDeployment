@@ -5,7 +5,7 @@
 # description: Functions for OU creation
 ##############################################################
 source Functions/shared_functions.sh
-source Organization/organization_functions.sh
+source Org/stacks/Organization/organization_functions.sh
 
 profile="Org"
 
