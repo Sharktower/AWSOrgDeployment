@@ -61,8 +61,10 @@ deploy_allowedregions(){
 
   #echo $regions
 
-  region1=eu-west-1
-  region2=eu-west-2
+  profile="Governance"
+
+  region1="eu-west-1"
+  region2="eu-west-2"
 
   scpname="AllowedRegions"
   targetids=$(get_root_id)
