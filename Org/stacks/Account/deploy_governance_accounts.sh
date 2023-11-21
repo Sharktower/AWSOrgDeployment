@@ -15,8 +15,28 @@ echo "-------------- Deploy Accounts -------------------"
 deploy_account_w_ou_name 'Billing' 'Governance'
 deploy_account_w_ou_name 'IAM & Governance' 'Governance'
 
-#deploy_account_w_ou_name 'Backup' 'Backup'
-#deploy_account_w_ou_name 'Sandbox' 'Sandbox'
+#Engineering OU
+deploy_account_w_ou_name 'Sandbox' 'Engineering'
+deploy_account_w_ou_name 'Dev' 'Engineering'
+deploy_account_w_ou_name 'Test' 'Engineering'
+deploy_account_w_ou_name 'Staging' 'Engineering'
+
+#Critical Resources OU
+deploy_account_w_ou_name 'KeysCerts' 'CriticalResources'
+deploy_account_w_ou_name 'Domains' 'CriticalResources'
+deploy_account_w_ou_name 'Secrets' 'CriticalResources'
+deploy_account_w_ou_name 'Networking' 'CriticalResources'
+deploy_account_w_ou_name 'ImagesContainers' 'CriticalResources'
+deploy_account_w_ou_name 'Teleport' 'CriticalResources'
+
+#Security OU
+deploy_account_w_ou_name 'LogsMonitoring' 'Security'
+deploy_account_w_ou_name 'IncidentResponse' 'Security'
+
+#Backup OU
+deploy_account_w_ou_name 'DataBackup' 'Backup'
+deploy_account_w_ou_name 'LogArchive' 'Backup'
+deploy_account_w_ou_name 'ArchivedAccounts' 'Backup'
 
 #################################################################################
 # Copyright Notice
