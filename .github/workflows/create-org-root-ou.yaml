@@ -29,6 +29,17 @@ jobs:
             aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }} --profile OrgRoot --region eu-west-2
             aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }} --profile GovernanceRoot --region eu-west-2
             aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }} --profile GovernanceRoot --region eu-west-2
+            aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }} --profile Governance --region eu-west-2
+            aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }} --profile Governance --region eu-west-2
+            aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }} --profile Engineering --region eu-west-2
+            aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }} --profile Engineering --region eu-west-2
+            aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }} --profile CriticalResources --region eu-west-2
+            aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }} --profile CriticalResources --region eu-west-2
+            aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }} --profile Security --region eu-west-2
+            aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }} --profile Security --region eu-west-2
+            aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }} --profile Backup --region eu-west-2
+            aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }} --profile Backup --region eu-west-2
+
         - name: Check credentials and profile
           env:
             AWS_DEFAULT_REGION: eu-west-2

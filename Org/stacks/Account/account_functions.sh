@@ -7,12 +7,12 @@
 source Functions/shared_functions.sh
 source Org/stacks/Organization/organization_functions.sh
 
-profile="OrgRoot"
 
 deploy_account_w_ou_name(){
 
 	accountname="$1"
 	ouname="$2"
+	profile="$2"
 	
 	ouid=$(get_ou_id $ouname)
 	
