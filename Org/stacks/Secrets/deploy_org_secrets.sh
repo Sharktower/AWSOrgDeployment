@@ -18,8 +18,8 @@ if [ "$kmskeyid" == "" ]; then
   exit 1
 fi
 
-create_secret OrgPrefix $kmskeyid "set_orgprefix_value_in_secrets_manager"
-create_secret OrgDomain $kmskeyid "set_orgdomain_value_in_secrets_manager"
+create_secret OrgPrefix $kmskeyid "proteus"
+create_secret OrgDomain $kmskeyid "myproteus.com"
 
 
 
