@@ -13,7 +13,7 @@ echo "-------------- Deploy Accounts -------------------"
 #accounts are not created in the DenyAll OU by billing admin
 #move from there to correct OU by governance admin
 deploy_account_w_ou_name 'Billing' 'Governance'
-deploy_account_w_ou_name 'IAM & Governance' 'Governance'
+deploy_account_w_ou_name 'IAMGovernance' 'Governance'
 
 #Engineering OU
 deploy_account_w_ou_name 'Sandbox' 'Engineering'
